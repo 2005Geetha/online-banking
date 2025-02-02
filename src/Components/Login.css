@@ -1,0 +1,226 @@
+/* General styles */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #e9f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container styles */
+.container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 800px; /* Default width before sign-up */
+  max-width: 100%;
+  min-height: 500px; /* Default height before sign-up */
+  display: flex;
+  overflow: hidden;
+  transition: all 1.5s ease-in-out; /* Slower transition */
+}
+
+/* When in sign-up mode, increase the container size */
+.container.sign-up-mode {
+  width: 1100px; /* Increased width for sign-up mode */
+  min-height: 700px; /* Increased height */
+}
+
+/* Form container styles */
+.form-container {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  padding: 50px;
+  transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out; /* Slower transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Align items vertically */
+  z-index: 1;
+}
+
+/* Sign-in container */
+.sign-in-container {
+  left: 0;
+  z-index: 2;
+}
+
+/* Sign-up container */
+.sign-up-container {
+  left: 50%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Ensures smooth transition */
+}
+
+/* When in sign-up mode, move the sign-in container off-screen and show the sign-up container */
+.container.sign-up-mode .sign-in-container {
+  transform: translateX(-100%);
+}
+
+.container.sign-up-mode .sign-up-container {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Input styles */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+button {
+  background: #26a69a;
+  width: 120px;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  font-size: 16px;
+  margin-top: 10px;
+  display: block;
+}
+
+button:hover {
+  background: #1e847f;
+}
+
+button.sign-up-button {
+  background: #ff6f61; /* New background color */
+  font-size: 14px; /* Larger font size */
+  border-radius: 6px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.sign-up-button:hover {
+  background: #e55f4a; /* Darker shade for hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+/* Sign-in and Sign-up Button Styles */
+button.sigin {
+  background-color: black; /* Set background to black */
+  color: white; /* Text color */
+  font-size: 16px;
+  font-weight: 600;
+  width: 50%;
+  padding: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+button.sigin:hover {
+  background-color: #333; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Overlay styles */
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #26a69a, #1e847f);
+  color: #fff;
+  transition: transform 1.5s ease-in-out; /* Slower transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  z-index: 1;
+  border-top-left-radius: 50%; /* Semi-circular border on the left */
+  border-bottom-left-radius: 50%; /* Semi-circular border on the left */
+}
+
+/* When in sign-up mode, reverse the semi-circular border to the right side */
+.container.sign-up-mode .overlay-container {
+  transform: translateX(-100%);
+  z-index: 2; /* Ensure overlay is above form during sign-up mode */
+  border-top-left-radius: 0; /* Remove the left border radius */
+  border-bottom-left-radius: 0; /* Remove the left border radius */
+  border-top-right-radius: 50%; /* Semi-circular border on the right */
+  border-bottom-right-radius: 50%; /* Semi-circular border on the right */
+}
+
+/* Overlay panel styles */
+.overlay-panel {
+  position: absolute;
+  width: 50%;
+  padding: 50px;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Increase size of "Hello Friend" when toggled to sign-up mode */
+.container.sign-up-mode .overlay-container .overlay-panel h1 {
+  font-size: 32px; /* Increased size */
+  color: white;
+}
+
+.container.sign-up-mode .overlay-container .overlay-panel p {
+  font-size: 18px; /* Increased size */
+  color:white
+}
+
+/* Button with transparent background */
+.ghost {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* Social Media Icons */
+.social-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.social {
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #555;
+}
+
+.social:hover {
+  color: #26a69a;
+}
+
+/* Sign-in message for the overlay */
+.overlay-container .overlay-panel h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.overlay-container .overlay-panel p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color:white;
+}

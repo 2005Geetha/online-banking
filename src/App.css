@@ -1,0 +1,133 @@
+/* App.css */
+
+/* General Styling for App */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.authButtons {
+  display: flex;
+}
+
+.authButton {
+  padding: 5px 15px;
+  border: 1px solid #333;
+  text-decoration: none;
+  color: #333;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+/* Flexbox Utilities */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Additional Utilities */
+.mt-auto {
+  margin-top: auto;
+}
+
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}
+
+.shadow {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.bg-teal-800 {
+  background-color: #1e4f4d;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-blue-800 {
+  color: #1e40af;
+}
+
+/* For Register Button */
+.registerBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Responsive Styles */
+
+/* For large screens */
+@media (min-width: 1024px) {
+  .lg-hidden {
+    display: none !important;
+  }
+
+  .lg-block {
+    display: block !important;
+  }
+
+  .lg-pt-16 {
+    padding-top: 4rem;
+  }
+
+  .lg-leading-1-20 {
+    line-height: 1.20;
+  }
+}
